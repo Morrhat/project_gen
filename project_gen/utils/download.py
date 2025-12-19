@@ -1,5 +1,7 @@
 import os
 import platform
+import shutil
+
 import requests
 
 def download() -> None:
@@ -13,3 +15,5 @@ def download() -> None:
 
         if platform.system() != "Windows":
             os.chmod(file_name, mode=0o755)
+
+    shutil.move(file_name, f".venv/Scripts/{file_name}")

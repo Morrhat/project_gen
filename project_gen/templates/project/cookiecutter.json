@@ -1,8 +1,8 @@
 {
-  "project_name": "register_service",
+  "project_name": "My_project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('.', '-') }}",
-  "repository_name": "register_service",
-  "user_email": "user@email.com",
+  "repository_name": "My_project",
+  "user_email": "Kovengor@gmail.com",
   "authors": "Morrhat",
   "description": "{{ cookiecutter.project_slug }} project",
   "use_current_directory": "y"
