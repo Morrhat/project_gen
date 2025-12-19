@@ -1,0 +1,9 @@
+# Заполни конфигурацию для тестового проекта, укажи в нём необходимые ресурсы
+#[[http]]
+#service_name = "example1_service"
+#swagger = "http://example1_service/swagger/example1/swagger.json"
+#
+#
+#[[http]]
+#service_name = "example2_service"
+#swagger = "http://example2_service/swagger/example2/swagger.json"
