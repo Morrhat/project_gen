@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Kristina Pylzy <kovengor@gmail.com>"]
 readme = "README.md"
+packages = [{include = "project_gen"}]
 
 [tool.poetry.dependencies]
 python = "^3.13"
@@ -14,3 +15,7 @@ requests = "^2.32.5"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+project_gen = "project_gen.main:cli"
