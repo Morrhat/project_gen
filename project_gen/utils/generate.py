@@ -1,4 +1,6 @@
+import os
 import pathlib
+import shutil
 
 from project_gen.utils.utils import run_command
 
@@ -20,6 +22,13 @@ def generate_api(package_name: str, swagger_url: str, templates: str | None=None
 
     run_command(command)
 
+
+def move_files(package_name: str) -> None:
+    if os.path.exists(f"clients/http/{package_name}"):
+        shutil.rmtree(f"clients/http/{package_name}")
+
+    shutil.move(f"{package_name}/{package_name}", f"clients/http/{package_name}")
+    shutil.rmtree(package_name)
 
 # "http://5.63.153.31:8085/register/openapi.json"
 # http://185.185.143.231:5051/swagger/Game/swagger.json
