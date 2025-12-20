@@ -1,4 +1,3 @@
-import pathlib
 import subprocess
 import sys
 from pathlib import Path
@@ -6,7 +5,6 @@ from pathlib import Path
 from cookiecutter.main import cookiecutter
 
 def run_command(command: list[str]) -> str:
-    print(' '.join(command))
     result = subprocess.run(args=command, text=True, capture_output=True)
     print(result.stdout)
     if result.returncode != 0:
@@ -43,7 +41,7 @@ def create_project(template: str | None = None) -> None:
     user_email, authors = get_git_user_info()
     remote = get_git_repository_info()
     print(f"{authors} <{user_email}>")
-    parent_dir = Path().cwd()
+    parent_dir = Path().cwd().parent
     extra_context = {
         "user_email": user_email,
         "authors": authors,

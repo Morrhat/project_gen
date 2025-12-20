@@ -73,15 +73,3 @@ def generate(templates: str | None = None) -> None:
             directory="clients/http",
             package_name=package_name,
         )
-
-
-
-
-
-
-
-
-
-
-# "http://5.63.153.31:8085/register/openapi.json"
-# http://185.185.143.231:5051/swagger/Game/swagger.json

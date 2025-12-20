@@ -5,9 +5,6 @@ from project_gen.utils.generate import generate
 from project_gen.utils.utils import setup
 
 
-#download()
-
-
 @click.group()
 def cli() -> None:
     ...
@@ -15,6 +12,7 @@ def cli() -> None:
 @cli.command("setup")
 @click.option("--template", "-t", required=False, default=None)
 def setup_command(template: str | None) -> None:
+    download()
     setup(template=template)
     init()
 
@@ -30,6 +28,7 @@ def init_command() -> None:
 
 
 cli.add_command(generate_command)
+cli.add_command(setup_command)
 cli.add_command(init_command)
 
 if __name__ == "__main__":
