@@ -1,3 +1,4 @@
+import pathlib
 import subprocess
 import sys
 from pathlib import Path
@@ -12,6 +13,7 @@ def run_command(command: list[str]) -> str:
         print(f"Error: {result.stderr}, for command: {' '.join(command)}")
         sys.exit(1)
     return result.stdout.strip()
+
 
 def check_git_repository() -> None:
     command = ["git", "rev-parse", "--is-inside-work-tree"]
@@ -33,7 +35,9 @@ def get_git_repository_info() -> str:
     remote = remote_url.split('/')[-1].split('.git')[0]
     return remote
 
-def create_project() -> None:
+
+def create_project(template: str | None = None) -> None:
+    template = template or str(Path(__file__).parent.parent / "templates" / "project")
     print("Creating project")
     check_git_repository()
     user_email, authors = get_git_user_info()
@@ -47,7 +51,7 @@ def create_project() -> None:
         "repository": remote,
     }
     cookiecutter(
-        template="https://github.com/Morrhat/common_qa_template.git",
+        template=template,
         no_input=True,
         overwrite_if_exists=True,
         output_dir=parent_dir,
@@ -55,3 +59,7 @@ def create_project() -> None:
     )
     print("Project created")
 
+
+def setup(template: str | None = None) -> None:
+    check_git_repository()
+    create_project()

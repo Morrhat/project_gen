@@ -2,6 +2,7 @@ import click
 from project_gen.utils.download import download, \
     init
 from project_gen.utils.generate import generate
+from project_gen.utils.utils import setup
 
 
 #download()
@@ -11,6 +12,11 @@ from project_gen.utils.generate import generate
 def cli() -> None:
     ...
 
+@cli.command("setup")
+@click.option("--template", "-t", required=False, default=None)
+def setup_command(template: str | None) -> None:
+    setup(template=template)
+    init()
 
 @cli.command("generate")
 def generate_command() -> None:
