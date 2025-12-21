@@ -11,6 +11,7 @@ python = "^3.13"
 cookiecutter = "^2.6.0"
 requests = "^2.32.5"
 toml = "^0.10.2"
+inflection = "^0.5.1"
 
 
 [build-system]

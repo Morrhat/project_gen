@@ -1,4 +1,6 @@
 import click
+
+from project_gen.internal.generator import Generator
 from project_gen.utils.download import download, \
     init
 from project_gen.utils.generate import generate
@@ -19,6 +21,7 @@ def setup_command(template: str | None) -> None:
 @cli.command("generate")
 def generate_command() -> None:
     generate()
+    Generator().generate()
 
 
 @cli.command("init")
