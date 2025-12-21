@@ -29,8 +29,6 @@ pydentic = "^0.0.1.dev3"
 pyhamcrest = "^2.1.0"
 pynacl = "^1.6.1"
 pytest = "^9.0.1"
-pytest-order = "^1.3.0"
-pytest-telegram-notifier = "^1.4.0"
 pyyaml = "^6.0.3"
 six = "^1.17.0"
 structlog = "^25.5.0"
@@ -42,15 +40,13 @@ httpx = "^0.28.1"
 curlify2 = "^2.0.0"
 pytest-asyncio = "^1.3.0"
 ruff = "==0.14.7"
-telebot = "^0.0.5"
-telegram = "^0.0.1"
-pytelegrambotapi = "^4.29.1"
 vyper-config = "^1.2.1"
 pathlib = "^1.0.1"
 restcodegen = "1.2.0"
 pydantic = "^2.12.5"
 aiohttp = "^3.11.14"
 aiohttp-retry = "^2.9.1"
+pytest-env = "1.2.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -71,10 +67,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-addopts = """
-    --telegram-notifier
-    --alluredir=../allure-results
-    --telegram-notifier-config-file=telegram-notifier-config.ini
-"""
 asyncio_mode = 'auto'
 asyncio_default_fixture_loop_scope = 'function'
