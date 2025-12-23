@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "project_gen"}]
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = ">=3.11,<4.0"
 cookiecutter = "^2.6.0"
 requests = "^2.32.5"
 toml = "^0.10.2"
